@@ -59,7 +59,7 @@ def find_token_silver():
     Returns:
 	dist (float): distance of the closest token (-1 if no token is detected)
 	rot_y (float): angle between the robot and the token (-1 if no token is detected)
-	g_code (float): code of the silver token identified
+	s_code (float): code of the silver token identified
     """
     dist=100
     for token in R.see():
