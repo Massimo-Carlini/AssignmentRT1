@@ -104,7 +104,8 @@ for m in markers:
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
-### How it works ###
+How it works
+------------
 Our goal is to pair silver tokens with golden tokens. To do that we repeat some actions:
 1) the robot are looking for a silver token that has not yet been identified
 2) get closer to it and grab it
@@ -113,7 +114,8 @@ Our goal is to pair silver tokens with golden tokens. To do that we repeat some 
 5) restart from 1) until the robot find new silver tokens
 
 
-### Pseudocode ###
+Pseudocode
+----------
 	a_th <- 2
 	d_th <- 0.4
 	dist <- float
