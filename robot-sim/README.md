@@ -104,68 +104,74 @@ for m in markers:
 
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
+### How it works ###
+Our goal is to pair silver tokens with golden tokens. To do that we repeat some actions:
+1) the robot are looking for a silver token that has not yet been identified
+2) get closer to it and grab it
+3) looking for a golden token that is not identified yet to pair it with
+4) when we find it go close to it and release the silver token
+5) restart from 1) until the robot find new silver tokens
+
 
 ### Pseudocode ###
-
+	a_th <- 2
+	d_th <- 0.4
+	dist <- float
 	silver_code <- list
 	golden_code <- list
 
 	find_token_silver()
-		function to find the closest silver token
 		dist <- 100
-		for token in R.see()
-	    		if code of token silver is not in silver_code:list
-				if distance of token < dist and color of token == 'silver':
+		for each token in R.see()
+	    		if code of token silver is not in silver code list
+				if distance of token is less than dist and the color of token is 'silver':
 					dist <- distance of token
 					rot_y <- angle of token
 					s_code <- silver code
 			
 			
-	    if dist = 100
+	    if dist is equal to 100
 		return -1, -1, -1
-	    else:
+	    else
 	   	return dist, rot_y, s_code
 	   	
 	   	
 	find_token_gold()
-		Function to find the closest golden token
-
-		
+	
 		dist <- 100
-		for token in R.see()
-			if code of token gold is not in silver_code:list
-				if distance of token < dist and color of token = 'gold'
+		for each token in R.see()
+			if code of token gold is not in silver code list
+				if distance of token is less than dist and color of token is 'gold'
 					dist <- token.dist
 					rot_y <- token.rot_y
 					g_code <- token.info.code
 			
-		if dist = 100
+		if dist is equal to 100
 			return -1, -1, -1
 		else:
 		   	return dist, rot_y, g_code
 	   	
 	   	
 	grab_token(code_silver:list)
-		Function to grab the silver token and then release it if we are close to golden token
-
+	
 		if I take the token
 			add the silver code to list
 			release <- True
 			
-			while release:
+			while release
 				dist_gold, rot_gold, code_gold <- find_token_gold()
-				if(dist == -1)
+				if dist is equal to -1
 					turn the robot
-				else if(dist_silver < d_th)
+				else if dist_silver is less than d_th
 					release the silver token
 					make a step back with the robot
 					add the golden token at his list
 					release <- False
-				else if(-a_th <= rot_gold <= a_th)
-					go on with the robot
-				else if(rot_gold < -a_th)
+				else if the value of rot_gold is between -a_th and a_th
+					the robot must go on
+				else if rot_gold is less than -a_th
 					turn left
-				else if(rot_gold > a_th)
+				else if rot_gold is greater than a_th
 					turn right
 			
 			
@@ -175,17 +181,17 @@ for m in markers:
 		
 			dist_silver, rot_silver, code_silver <- find_token_silver()
 			
-			if((len(silver_code) == 6) and (len(golden_code) == 6))
+			if size of sivler code list is equal to 6 and the size of golden code list is equal to 6
 				exit
-			if(dist_silver == -1)
+			if dist_silver is equal to -1
 				turn the robot
-			else if(dist_silver < d_th)
-				grab_token(code_silver)	
-			else if(-a_th < rot_silver < a_th)
-				go on with the robot	
-			else if(rot_silver < -a_th)
+			else if dist_silver is less than d_th
+				grab_token(code_silver)
+			else if the value of rot_silver is between -a_th and a_th
+				the robot must go on	
+			else if rot_silver is less than -a_th
 				turn left
-			else if(rot_silver > a_th)
+			else if rot_silver is greater than a_th
 				turn right
 			
 ### Possible improvement ###
