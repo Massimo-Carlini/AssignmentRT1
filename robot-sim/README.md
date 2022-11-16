@@ -113,7 +113,7 @@ for m in markers:
 	find_token_silver()
 		function to find the closest silver token
 		dist <- 100
-		for token in R.see():
+		for token in R.see()
 	    		if code of token silver is not in silver_code:list
 				if distance of token < dist and color of token == 'silver':
 					dist <- distance of token
@@ -121,25 +121,25 @@ for m in markers:
 					s_code <- silver code
 			
 			
-	    if dist = 100:
+	    if dist = 100
 		return -1, -1, -1
 	    else:
 	   	return dist, rot_y, s_code
 	   	
 	   	
-	find_token_gold():
+	find_token_gold()
 		Function to find the closest golden token
 
 		
 		dist <- 100
-		for token in R.see():
-			if code of token gold is not in silver_code:list:
-				if distance of token < dist and color of token = 'gold':
+		for token in R.see()
+			if code of token gold is not in silver_code:list
+				if distance of token < dist and color of token = 'gold'
 					dist <- token.dist
 					rot_y <- token.rot_y
 					g_code <- token.info.code
 			
-		if dist = 100:
+		if dist = 100
 			return -1, -1, -1
 		else:
 		   	return dist, rot_y, g_code
@@ -148,7 +148,7 @@ for m in markers:
 	grab_token(code_silver:list)
 		Function to grab the silver token and then release it if we are close to golden token
 
-		if I take the token:
+		if I take the token
 			add the silver code to list
 			release <- True
 			
@@ -171,7 +171,7 @@ for m in markers:
 			
 	main()
 		
-		while 1:
+		while 1
 		
 			dist_silver, rot_silver, code_silver <- find_token_silver()
 			
