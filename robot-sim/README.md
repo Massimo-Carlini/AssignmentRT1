@@ -105,11 +105,6 @@ for m in markers:
 [sr-api]: https://studentrobotics.org/docs/programming/sr/
 
 
-### Code ###
-
-
-
-
 ### Pseudocode ###
 
 silver_code <- list
@@ -174,7 +169,7 @@ grab_token(code_silver:list)
 				turn right
 		
 		
-def main():
+main()
 	
 	while 1:
 	
