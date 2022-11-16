@@ -205,5 +205,6 @@ Pseudocode
 			else if rot_silver is greater than a_th
 				turn right
 			
-### Possible improvement ###
+Possible improvements
+--------------------
 A possible improvement could be to optimize the search for the closest tokens, by having the robot do a mapping of the environment and update the position of the tokens when it moves
