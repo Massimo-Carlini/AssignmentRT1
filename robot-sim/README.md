@@ -107,14 +107,14 @@ for m in markers:
 How it works
 ------------
 
-### General explaination ###
+### General description ###
 Our goal is to pair silver tokens with golden tokens. To do that we repeat some actions:
 1) the robot are looking for a silver token that has not yet been identified
 2) get closer to it and grab it
 3) looking for a golden token that is not identified yet to pair it with and release the silver token
 4) restart from 1. until the robot find new silver tokens
 
-### A little bit explained ###
+### A little bit more explained ###
 In the following rows I'll explain which function deals with the parts just described.
 1) the main function deals with the search for free silver tokens, that is made with several control to detect, turn and drive the robot to the closest token.
 2) when the robot is close to a silver token and the robot should grab it, I call the function grab_token() that allows the robot to grab it.
